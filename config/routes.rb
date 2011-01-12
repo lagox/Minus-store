@@ -1,4 +1,6 @@
 Minus::Application.routes.draw do
+  resources :catalogs
+
   get "pages/index"
 
   get "pages/about"

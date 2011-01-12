@@ -233,3 +233,17 @@ main{
      font-family:Helvetica,Tahoma,sans-serif;
      padding-top:40px;
 }
+#error_explanation{
+    color:red;
+}
+/*catalog*/
+.catalog_product{
+    background:#F0EEE0;
+    padding:5px;
+    margin-top:10px;   
+}
+.catalog_title{
+    color:#491701;
+    font-size:14px;
+    font-weight:bold;
+}
