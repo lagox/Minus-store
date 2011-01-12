@@ -1,20 +1,23 @@
-<h1>Каталог</h1>
+<h1 class="catalog_site_title">Каталог</h1>
 
 <% @catalogs.each do |catalog| %>
   <div class="catalog_product">
-    <h2 class="catalog_title">Название: <%= catalog.title %></h2>
+    <h2 class="catalog_title">Название: <%= link_to catalog.title, catalog %></h2>
     <div class="catalog_file">Демо: <%= catalog.file %></div>
     <div class="catalog_length">Длительность: <%= catalog.length %></div>
-    <div class="catalog_price">Цена: <%= catalog.price %></div>
+    <div class="catalog_price">Цена: <%= catalog.price %> руб.</div>
     <div class="catalog_sold">Продано: <%= catalog.sold ? "Да" : "Нет"  %></div>
     <div class="catalog_actions">
-    <%= link_to 'Show', catalog %>
-    <%= link_to 'Edit', edit_catalog_path(catalog) %>
-    <%= link_to 'Destroy', catalog, :confirm => 'Are you sure?', :method => :delete %><br />
+    <%= link_to 'Редактировать', edit_catalog_path(catalog) %>
+    <%= link_to 'Удалить', catalog, :confirm => 'Вы уверены?', :method => :delete %><br />
     </div>
   </div>
 <% end %>
 
 <br />
-
-<%= link_to 'New Catalog', new_catalog_path %>
+<div class="newcatalogbutton">
+<%= link_to 'Новый минус', new_catalog_path %>
+</div>
+<div class="willpaginate">
+<%= will_paginate @catalogs %>
+</div>

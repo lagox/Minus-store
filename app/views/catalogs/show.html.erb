@@ -1,30 +1,14 @@
 <p id="notice"><%= notice %></p>
+<div class="catalog_product_show">
+  <div class="catalog_title_show">Название: <span><%= @catalog.title %></span></div>
+  <div class="catalog_file_show">Демо: <span><%= @catalog.file %></span></div>
+  <div class="catalog_length_show">Длительность: <span><%= @catalog.length %></span></div>
+  <div class="catalog_price_show">Цена: <span><%= @catalog.price %> руб.</span></div>
+  <div class="catalog_sold_show">Продано: <span><%= @catalog.sold ? "Да" : "Нет"  %></span></div>
+  <div class="catalog_actions">
+    <%= link_to 'Edit', edit_catalog_path(@catalog) %>
+    <%= link_to 'Destroy', @catalog, :confirm => 'Are you sure?', :method => :delete %><br />
+  </div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @catalog.title %>
-</p>
-
-<p>
-  <b>File:</b>
-  <%= @catalog.file %>
-</p>
-
-<p>
-  <b>Length:</b>
-  <%= @catalog.length %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @catalog.price %>
-</p>
-
-<p>
-  <b>Sold:</b>
-  <%= @catalog.sold %>
-</p>
-
-
-<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
-<%= link_to 'Back', catalogs_path %>
+<%= link_to 'Назад', catalogs_path %>

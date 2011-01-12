@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, 'Название' %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :file %><br />
+    <%= f.label :file, 'Файл' %><br />
     <%= f.text_field :file %>
   </div>
   <div class="field">
-    <%= f.label :length %><br />
+    <%= f.label :length, 'Длительность' %><br />
     <%= f.text_field :length %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :price, 'Цена' %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :sold %><br />
+    <%= f.label :sold, 'Продано' %><br />
     <%= f.check_box :sold %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Создать' %>
   </div>
 <% end %>

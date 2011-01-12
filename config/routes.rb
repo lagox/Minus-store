@@ -4,10 +4,11 @@ Minus::Application.routes.draw do
   get "pages/index"
 
   get "pages/about"
-
+  
   get "pages/contacts"
+  
+  match '/contacts' => "pages#contacts"
 
-  match '/contacts'=> "pages#contacts"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

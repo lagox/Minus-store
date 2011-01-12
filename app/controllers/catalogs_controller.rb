@@ -1,9 +1,10 @@
+#encoding:UTF-8
 class CatalogsController < ApplicationController
   # GET /catalogs
   # GET /catalogs.xml
   def index
-    @catalogs = Catalog.all
-
+    @catalogs = Catalog.paginate :page => params[:page]
+    @title = "Каталог"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @catalogs }
@@ -14,7 +15,6 @@ class CatalogsController < ApplicationController
   # GET /catalogs/1.xml
   def show
     @catalog = Catalog.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @catalog }
