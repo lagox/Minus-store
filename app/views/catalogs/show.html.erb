@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @catalog.title %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @catalog.file %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @catalog.length %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @catalog.price %>
+</p>
+
+<p>
+  <b>Sold:</b>
+  <%= @catalog.sold %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
+<%= link_to 'Back', catalogs_path %>

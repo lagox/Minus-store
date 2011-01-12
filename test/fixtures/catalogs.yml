@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  file: MyString
+  length: 1.5
+  price: 1
+  sold: false
+
+two:
+  title: MyString
+  file: MyString
+  length: 1.5
+  price: 1
+  sold: false
