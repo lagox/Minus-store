@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(:version => 20110112062521) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "title"
-    t.string   "file"
     t.float    "length"
     t.integer  "price"
     t.boolean  "sold"

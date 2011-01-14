@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def title
-    @base_title = "My Site"
+    @base_title = "Minus-store"
     if @title.nil?
       @base_title
     else
