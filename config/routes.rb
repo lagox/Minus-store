@@ -1,5 +1,7 @@
 Minus::Application.routes.draw do
 
+  resources :links
+
   resources :catalogs
 
   get "pages/index"

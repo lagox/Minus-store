@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115095240) do
+ActiveRecord::Schema.define(:version => 20110115202208) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20110115095240) do
     t.string   "minus_content_type"
     t.integer  "minus_file_size"
     t.datetime "minus_updated_at"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

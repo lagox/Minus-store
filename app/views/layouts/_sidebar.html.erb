@@ -5,10 +5,9 @@
             </h2>
             <div class="side_cont">
               <ul>
-                <li><a href="#">Хип-хоп #1</a></li>
-                <li><a href="#">R&B #1</a></li>
-                <li><a href="#">Хип-хоп #2</a></li>
-                <li><a href="#">Хип-хоп #3</a></li>
+                <% new_minus.each do |minus| %>
+                  <li><%= minus.title %></li>
+                <% end %>
               </ul>
             </div>
           </div>  
@@ -18,10 +17,13 @@
             </h2>
             <div class="side_cont">
               <ul>
-                <li><a href="#">Send #1</a></li>
-                <li><a href="#">R&B #1</a></li>
-                <li><a href="#">Air #2</a></li>
-                <li><a href="#">Хип-хоп #3</a></li>
+                <% if sold_minus.empty? %>
+                  <li>Пока никто не купил:)</li>
+                <% else %>
+                  <% sold_minus.each do |minus| %>
+                    <li><%= minus.title %></li>
+                  <% end %>
+                <% end %>                
               </ul>
             </div>
           </div>  
@@ -31,8 +33,8 @@
             </h2>
             <div class="side_cont">
               <p class="howcontactus">
-              Email: order@one-two.ru<br />
-              Skype: onetwo_ru<br />
+              Email: manager@theminus.ru<br />
+              Skype: lagox.skype<br />
               Тел.: +7(777)3894484
               </p>
             </div>
