@@ -66,7 +66,7 @@ main{
     font-weight:bold;
     font-family: Helvetica,Tahoma,sans-serif;
     position:absolute;
-    top:7%;
+    top:4%;
     left:15%;
 }
 .menu{
@@ -85,7 +85,7 @@ main{
 }
 .menu ul li{
     float:left;
-    margin-right:45px;
+    margin-right:55px;
 }
 .menu a{
     font-family: Arial, Tahoma, sans-serif;
@@ -137,7 +137,7 @@ main{
 .free a{
     display:block;
     margin-top:14px;
-    margin-left:55px;
+    margin-left:50px;
     font-size:14px;
     font-family:Helvetica,Tahoma,sans-serif;
     text-decoration:none;
@@ -290,4 +290,11 @@ main{
 }
 .willpaginate{
     text-align:center;
+}
+#notice{
+    background:#FFFFFF;
+    border:1px solid #40B75A;
+    color:#73C668;
+    font-size:12px;
+    padding:10px;
 }

@@ -1,0 +1,17 @@
+<%= form_tag(paymessage_path,:method => "post" ) do %>
+<p>
+Покупка минуса: <%= @catalog.title %>
+</p>
+  <div style="margin:0;padding:0;display:inline">
+    <input name="minus" type="hidden" value="<%= @catalog.title %>" />
+  </div> 
+<p>Имя:<br /><%= text_field_tag :name %></p>
+<p>e-mail:<br /><%= text_field_tag :email %></p>
+<p>Тип оплаты:<br /><%= select_tag(:pay_type, options_for_select([["Webmoney",1],
+                           ["Яндекс-деньги",2],
+                           ["Другое(укажу в примечании)"]])) %></p>
+<p>Примечение:<br /><%= text_area_tag :message, nil ,:rows => 10, :cols => 30 %></p>                           
+<p>
+<%= button_to "Отправить" %>
+</p>
+<% end %>
