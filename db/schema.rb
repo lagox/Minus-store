@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112062521) do
+ActiveRecord::Schema.define(:version => 20110115095240) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20110112062521) do
     t.boolean  "sold"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "minus_file_name"
+    t.string   "minus_content_type"
+    t.integer  "minus_file_size"
+    t.datetime "minus_updated_at"
   end
 
 end

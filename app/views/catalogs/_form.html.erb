@@ -1,4 +1,4 @@
-<%= form_for(@catalog) do |f| %>
+<%= form_for @catalog, :html => { :multipart => true } do |f| %>
   <% if @catalog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@catalog.errors.count, "error") %> prohibited this catalog from being saved:</h2>
@@ -16,8 +16,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :file, 'Файл' %><br />
-    <%= f.text_field :file %>
+    <%= f.file_field :minus %>
   </div>
   <div class="field">
     <%= f.label :length, 'Длительность' %><br />

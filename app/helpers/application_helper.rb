@@ -9,4 +9,8 @@ module ApplicationHelper
     end
   end
   
+  def domain
+    @domain = request.host_with_port
+  end
+  
 end

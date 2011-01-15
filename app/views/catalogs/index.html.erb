@@ -6,6 +6,9 @@
     <div class="catalog_length">Длительность: <%= catalog.length %></div>
     <div class="catalog_price">Цена: <%= catalog.price %> руб.</div>
     <div class="catalog_sold">Продано: <%= catalog.sold ? "Да" : "Нет"  %></div>
+      <p>
+  <object id="audioplayer478" type="application/x-shockwave-flash" data="<%= root_url %>uppod.swf" width="300" height="35"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="<%= root_url %>uppod.swf" /><param name="flashvars" value="comment=nn&amp;st=<%= root_url %>styles/audio66-298.txt&amp;file=<%= root_url + catalog.minus.url %>" /></object>
+  </p>
     <div class="catalog_actions">
     <%= link_to 'Редактировать', edit_catalog_path(catalog) %>
     <%= link_to 'Удалить', catalog, :confirm => 'Вы уверены?', :method => :delete %><br />
