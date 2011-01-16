@@ -229,9 +229,11 @@ main{
      margin-top:10px;
 }
 #footer .copy{
-     font-size:15px;
-     font-family:Helvetica,Tahoma,sans-serif;
+     font-size:11px;
+     font-family:Tahoma,Helvetica,sans-serif;
+     font-weight:bold;
      padding-top:40px;
+     color:#491701;
 }
 #error_explanation{
     color:red;

@@ -13,6 +13,7 @@ Minus::Application.routes.draw do
   match "paymessage" => "store#create"
   match '/contacts' => "pages#contacts"
   match "/order" => "pages#order"
+  match 'store/:id' => 'store#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

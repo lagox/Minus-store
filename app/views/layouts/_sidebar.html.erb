@@ -6,7 +6,7 @@
             <div class="side_cont">
               <ul>
                 <% new_minus.each do |minus| %>
-                  <li><%= minus.title %></li>
+                  <li><%= link_to minus.title, "store/#{minus.id}" %></li>
                 <% end %>
               </ul>
             </div>
@@ -21,7 +21,7 @@
                   <li>Пока никто не купил:)</li>
                 <% else %>
                   <% sold_minus.each do |minus| %>
-                    <li><%= minus.title %></li>
+                    <li><%= link_to minus.title, "store/#{minus.id}" %></li>
                   <% end %>
                 <% end %>                
               </ul>

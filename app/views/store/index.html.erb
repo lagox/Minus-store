@@ -10,7 +10,7 @@
     <input name="id" type="hidden" value="<%= catalog.id %>" />
   </div> 
   <div class="catalog_product">
-    <h2 class="catalog_title">Название: <%= catalog.title %></h2>
+    <h2 class="catalog_title">Название: <%= link_to catalog.title, "store/#{catalog.id}" %></h2>
     <div class="catalog_length">Длительность: <%= catalog.length %></div>
     <div class="catalog_price">Цена: <%= catalog.price %> руб.</div>
     <div class="catalog_sold">Продано: <%= catalog.sold ? "Да" : "Нет"  %></div>

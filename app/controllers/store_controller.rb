@@ -10,6 +10,14 @@ class StoreController < ApplicationController
     end
   end
   
+  def show
+    @catalog = Catalog.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @catalog }
+    end
+  end
   
   def pay
     begin
@@ -38,6 +46,5 @@ class StoreController < ApplicationController
         redirect_to store_path      
       end
     end
-
   end
 end
