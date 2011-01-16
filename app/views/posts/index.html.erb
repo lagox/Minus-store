@@ -1,2 +1,16 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1 class="catalog_site_title">Новости</h1>
+
+<% @posts.each do |post| %>
+  <div class="post_one">
+    <div class="title">
+      <%= link_to post.title, post %>
+    </div>
+    <div class="content">
+      <%= post.body %>
+    </div>
+  </div>
+  <div class="catalog_actions">
+    <%= link_to 'Редактировать', edit_post_path(post) %>
+    <%= link_to 'Удалить', post, :confirm => 'Вы уверены?', :method => :delete %><br />
+  </div>
+<% end %>

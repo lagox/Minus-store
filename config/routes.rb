@@ -3,7 +3,7 @@ Minus::Application.routes.draw do
   get "posts/index"
 
   resources :links
-
+  resources :posts
   resources :catalogs
 
   
