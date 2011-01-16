@@ -1,19 +1,20 @@
 Minus::Application.routes.draw do
 
+  get "posts/index"
+
   resources :links
 
   resources :catalogs
 
-  get "pages/index"
-  get "pages/order"
   
-  get "pages/contacts"
   match '/store' => "store#index"
   match "/pay" => "store#pay"
   match "paymessage" => "store#create"
+  
   match '/contacts' => "pages#contacts"
-  match "/order" => "pages#order"
+  match "/about" => "pages#about"
   match 'store/:id' => 'store#show'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

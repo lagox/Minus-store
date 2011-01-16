@@ -1,5 +1,7 @@
 #encoding:UTF-8
 class PagesController < ApplicationController
+  respond_to :html
+  
   def index
     @title = "Главная"
   end
@@ -8,8 +10,8 @@ class PagesController < ApplicationController
     @title = "Контакты"
   end
   
-  def order
-    @title = "Заказать"
+  def about
+    @title = "О нас"
   end
-
+  
 end

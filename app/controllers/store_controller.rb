@@ -47,4 +47,5 @@ class StoreController < ApplicationController
       end
     end
   end
+  
 end
