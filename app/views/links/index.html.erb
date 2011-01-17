@@ -1,5 +1,9 @@
 <h1>Полезные ссылки</h1>
-
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <% @links.each do |link| %>
   <div class="link_one"><%= link_to link.title, link.url %></div>
   <div class="catalog_actions">

@@ -1,0 +1,13 @@
+<h1>Полезные ссылки</h1>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
+<% @stuffs.each do |stuff| %>
+  <div class="link_one"><%= link_to stuff.title, stuff.url %></div>
+<% end %>
+
+<div class="willpaginate">
+<%= will_paginate @stuffs %>
+</div>

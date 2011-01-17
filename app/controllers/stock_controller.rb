@@ -2,6 +2,7 @@
 class StockController < ApplicationController
   def index
     begin
+      @title = "Акции"
       @stocks = Post.paginate_by_sql ['select * from posts where category = ?', 
                     Post::CATEGORY[1]], :page => params[:page]      
     rescue WillPaginate::InvalidPage

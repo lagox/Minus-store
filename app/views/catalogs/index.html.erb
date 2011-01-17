@@ -1,5 +1,9 @@
 <h1 class="catalog_site_title">Каталог</h1>
-
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <% @catalogs.each do |catalog| %>
   <div class="catalog_product">
     <h2 class="catalog_title">Название: <%= link_to catalog.title, catalog %></h2>

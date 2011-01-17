@@ -3,11 +3,14 @@ Minus::Application.routes.draw do
   resources :posts
   resources :catalogs
 
-  get "/news" => "news#index"
-  get "news/:id" => "news#show"
+  match "/news" => "news#index"
+  match "news/:id" => "news#show"
   
-  get "/stocks" => "stock#index"
-  get "stocks/:id" => "stock#show"
+  match "/stocks" => "stock#index"
+  match "stocks/:id" => "stock#show"
+  
+  match "/stuff" => "stuff#index"
+  match "stuff/:id" => "stuff#show"
   
   match '/store' => "store#index"
   match "/pay" => "store#pay"
