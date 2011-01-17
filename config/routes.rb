@@ -1,6 +1,10 @@
 Minus::Application.routes.draw do
 
 
+  get "stock/index"
+
+  get "stock/show"
+
   get "/news" => "news#index"
   get "news/:id" => "news#show"
 
