@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, "Название" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
+    <%= f.label :url, "Ссылка" %><br />
     <%= f.text_field :url %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <p>
+    <%= f.submit "Создать" %>
+  </p>
 <% end %>

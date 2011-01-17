@@ -1,3 +1,8 @@
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <%= form_tag(pay_path,:method => "post") do %>
   <div style="margin:0;padding:0;display:inline">
     <input name="id" type="hidden" value="<%= @catalog.id %>" />

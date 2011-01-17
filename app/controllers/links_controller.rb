@@ -1,8 +1,9 @@
+#encoding:utf-8
 class LinksController < ApplicationController
   # GET /links
   # GET /links.xml
   def index
-    @links = Link.all
+    @links = Link.paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to(@link, :notice => 'Link was successfully created.') }
+        format.html { redirect_to(@link, :notice => 'Ссылка успешна создана') }
         format.xml  { render :xml => @link, :status => :created, :location => @link }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.update_attributes(params[:link])
-        format.html { redirect_to(@link, :notice => 'Link was successfully updated.') }
+        format.html { redirect_to(@link, :notice => 'Ссылка успешна обновлена') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

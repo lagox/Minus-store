@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <div class="catalog_product_show">
   <div class="catalog_title_show">Название: <span><%= @catalog.title %></span></div>
   <div class="catalog_length_show">Длительность: <span><%= @catalog.length %></span></div>

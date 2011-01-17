@@ -332,3 +332,14 @@ main{
     font-size:11px;
     padding:0px 10px 5px 10px;
 }
+
+/*links*/
+.link_one{
+    margin-top:20px;
+    margin-bottom:5px;
+}
+.link_one a{
+    font-size:16px;
+    text-decoration:none;
+    font-size:Tahoma,Helvetica,sans-serif;
+}

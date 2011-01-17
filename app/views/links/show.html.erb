@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 
 <p>
   <b>Title:</b>
@@ -10,6 +14,5 @@
   <%= @link.url %>
 </p>
 
-
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<%= link_to 'Редактировать', edit_link_path(@link) %> |
+<%= link_to 'Назад', links_path %>
