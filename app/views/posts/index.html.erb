@@ -14,3 +14,9 @@
     <%= link_to 'Удалить', post, :confirm => 'Вы уверены?', :method => :delete %><br />
   </div>
 <% end %>
+<div class="newcatalogbutton">
+<%= button_to 'Новая запись', new_post_path, :method => "get" %>
+</div>
+<div class="willpaginate">
+<%= will_paginate @catalogs %>
+</div>
