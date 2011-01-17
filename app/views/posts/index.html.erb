@@ -1,5 +1,9 @@
 <h1 class="catalog_site_title">Новости</h1>
-
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <% @posts.each do |post| %>
   <div class="post_one">
     <div class="title">
@@ -18,5 +22,5 @@
 <%= button_to 'Новая запись', new_post_path, :method => "get" %>
 </div>
 <div class="willpaginate">
-<%= will_paginate @catalogs %>
+<%= will_paginate @posts %>
 </div>

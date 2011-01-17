@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.paginate :page => params[:page]
-    @title = "Новости"
+    @title = "Новости/Акции"
   end
   
   def show
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     @post.destroy
     
     respond_to do |format|
-      format.html redirect_to(posts_url)
+      format.html { redirect_to(posts_url, :notice => "Запись успешна удалена") }
     end
   end
   

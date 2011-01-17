@@ -1,9 +1,8 @@
 Minus::Application.routes.draw do
 
 
-  get "news/index"
-
-  get "news/show"
+  get "/news" => "news#index"
+  get "news/:id" => "news#show"
 
   resources :links
   resources :posts

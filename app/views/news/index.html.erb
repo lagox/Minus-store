@@ -1,2 +1,19 @@
-<h1>News#index</h1>
-<p>Find me in app/views/news/index.html.erb</p>
+<h1 class="catalog_site_title">Новости</h1>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
+<% @news.each do |new| %>
+  <div class="post_one">
+    <div class="title">
+      <%= link_to new.title, "news/#{new.id}" %>
+    </div>
+    <div class="content">
+      <%= new.body %>
+    </div>
+  </div>
+<% end %>
+<div class="willpaginate">
+<%= will_paginate @news %>
+</div>

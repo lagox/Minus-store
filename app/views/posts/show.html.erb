@@ -1,7 +1,18 @@
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
 <h1>
   <%= @post.title %>
 </h1>
 <div class="post_content">
   <%= @post.body %>
 </div>
-<p><%= link_to 'Назад', posts_path  %></p>
+<div class="catalog_actions">
+    <%= link_to 'Редактировать', edit_post_path(@post) %>
+    <%= link_to 'Удалить', @post, :confirm => 'Вы уверены?', :method => :delete %><br />
+</div>
+<div class="newcatalogbutton">
+  <%= button_to "Назад", posts_path, :method => :get%>
+</div>

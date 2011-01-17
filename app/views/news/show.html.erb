@@ -1,2 +1,13 @@
-<h1>News#show</h1>
-<p>Find me in app/views/news/show.html.erb</p>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
+  <div class="post_one">
+    <div class="title">
+      <%= @new.title %>
+    </div>
+    <div class="content">
+      <%= @new.body %>
+    </div>
+  </div>
