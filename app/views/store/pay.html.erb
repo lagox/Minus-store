@@ -12,6 +12,7 @@
                            ["Другое(укажу в примечании)"]])) %></p>
 <p>Примечение:<br /><%= text_area_tag :message, nil ,:rows => 10, :cols => 30 %></p>                           
 <p>
-<%= button_to "Отправить" %>
+<%= button_to "Отправить" %><br />
+<%= button_to "Вернуться в каталог", store_url, :method => :get %>
 </p>
 <% end %>

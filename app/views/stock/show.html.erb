@@ -1,2 +1,16 @@
-<h1>Stock#show</h1>
-<p>Find me in app/views/stock/show.html.erb</p>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
+  <div class="post_one">
+    <div class="title">
+      <%= @stock.title %>
+    </div>
+    <div class="content">
+      <%= @stock.body %>
+    </div>
+  </div>
+  <div class="newcatalogbutton">
+  <%= button_to "Назад", stocks_path, :method => :get %>
+</div>

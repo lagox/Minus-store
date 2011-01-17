@@ -1,2 +1,19 @@
-<h1>Stock#index</h1>
-<p>Find me in app/views/stock/index.html.erb</p>
+<h1 class="catalog_site_title">Акции</h1>
+<% if notice%>
+<p id="notice">
+  <%= notice %>
+</p>
+<% end %>
+<% @stocks.each do |stock| %>
+  <div class="post_one">
+    <div class="title">
+      <%= link_to stock.title, "stocks/#{stock.id}" %>
+    </div>
+    <div class="content">
+      <%= stock.body %>
+    </div>
+  </div>
+<% end %>
+<div class="willpaginate">
+<%= will_paginate @stocks %>
+</div>
