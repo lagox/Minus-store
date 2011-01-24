@@ -1,4 +1,6 @@
 Minus::Application.routes.draw do
+  resources :users
+
   resources :links
   resources :posts
   resources :catalogs
