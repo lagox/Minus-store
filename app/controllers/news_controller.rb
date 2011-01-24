@@ -3,7 +3,8 @@ class NewsController < ApplicationController
   def index
     begin
     @title = "Новости"
-    @news = Post.paginate_by_sql ['select * from posts where category = ?', 
+    @news = Post.paginate_by_sql ['select * from posts where category = ?
+            order by id DESC', 
                  Post::CATEGORY[0]], :page => params[:page]
     rescue WillPaginate::InvalidPage
       flash[:notice] = 'Что делаешь? а?:)'

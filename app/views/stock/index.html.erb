@@ -10,7 +10,7 @@
       <%= link_to stock.title, "stocks/#{stock.id}" %>
     </div>
     <div class="content">
-      <%= stock.body %>
+      <%= raw(stock.body) %>
     </div>
   </div>
 <% end %>

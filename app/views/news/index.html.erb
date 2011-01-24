@@ -10,7 +10,7 @@
       <%= link_to new.title, "news/#{new.id}" %>
     </div>
     <div class="content">
-      <%= new.body %>
+      <%= raw(new.body) %>
     </div>
   </div>
 <% end %>

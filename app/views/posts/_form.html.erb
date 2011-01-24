@@ -1,3 +1,15 @@
+<!--tiny mce-->
+<%= javascript_include_tag 'mce/tiny_mce.js' %>
+<script type="text/javascript">
+  tinyMCE.init({
+    theme : "advanced",
+    mode : "textareas",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_statusbar_location : "bottom"
+  });
+</script>
+
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,18 +23,18 @@
     </div>
   <% end %>
   
-  <div class="field">
+  <p class="field">
     <%= f.label :title, "Название" %><br/ >
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
+  </p>
+  <p class="field">
     <%= f.label :body, "Текст" %><br />
-    <%= f.text_area :body, :size => "30x10" %>
-  </div>
-  <div class="field">
+    <%= f.text_area :body, :size => "60x20" %>
+  </p>
+  <p class="field">
     <%= f.label :category, "Категория" %><br />
     <%= f.select :category, Post::CATEGORY, :prompt => "Выберите категорию" %>
-  </div>
+  </p>
   <p>
     <%= f.submit "Создать" %>
   </p>

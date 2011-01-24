@@ -5,9 +5,13 @@
             </h2>
             <div class="side_cont">
               <ul>
-                <% new_minus.each do |minus| %>
-                  <li><%= link_to minus.title, "store/#{minus.id}" %></li>
-                <% end %>
+                <% if new_minus.empty? %>
+                  <li>Нету свежих минусов :)</li>
+                <% else %>
+                  <% new_minus.each do |minus| %>
+                    <li><%= link_to minus.title, "store/#{minus.id}" %></li>
+                  <% end %>
+                <% end %>              
               </ul>
             </div>
           </div>  

@@ -10,7 +10,7 @@
       <%= link_to post.title, post %>
     </div>
     <div class="content">
-      <%= post.body %>
+      <%= raw(post.body)%>
     </div>
   </div>
   <div class="catalog_actions">
