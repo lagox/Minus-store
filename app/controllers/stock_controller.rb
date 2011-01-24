@@ -17,6 +17,7 @@ class StockController < ApplicationController
   def show
     begin
       @stock = Post.find(params[:id])
+      @title = @stock.title
     rescue ActiveRecord::RecordNotFound
       redirect_to(stocks_path, :notice => "Такой записи не существует!")
     end

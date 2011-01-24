@@ -15,7 +15,7 @@ class LinksController < ApplicationController
   # GET /links/1.xml
   def show
     @link = Link.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @link }

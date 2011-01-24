@@ -2,7 +2,10 @@ Minus::Application.routes.draw do
   resources :links
   resources :posts
   resources :catalogs
-
+  
+  get "/store/sold"
+  get "/store/unsold"
+  
   match "/news" => "news#index"
   match "news/:id" => "news#show"
   

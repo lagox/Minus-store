@@ -15,6 +15,7 @@ class NewsController < ApplicationController
   def show
     begin
       @new = Post.find(params[:id])
+      @title = @new.title
       respond_to do |format|
         format.html
         format.xml { render :xml => @new }

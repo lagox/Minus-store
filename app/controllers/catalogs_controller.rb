@@ -15,6 +15,7 @@ class CatalogsController < ApplicationController
   # GET /catalogs/1.xml
   def show
     @catalog = Catalog.find(params[:id])
+    @title = @catalog.title
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @catalog }

@@ -343,3 +343,29 @@ main{
     text-decoration:none;
     font-size:Tahoma,Helvetica,sans-serif;
 }
+/*Sold or unsold*/
+.sold_cont{
+    margin:10px 0px 15px 0px;
+}
+.sold{
+    display:block;
+    padding:5px;
+    background:#F0EEE0;                                                                                                                 
+    width:285px;
+    float:left;
+    text-align:center;
+}
+.sold a{
+    text-decoration:none;
+    display:block;
+}
+.sold:hover{
+    background:#E3DED0;
+}
+.unsold{
+    margin-left:10px;    
+}
+.clear{
+    clear:both;
+}
+
