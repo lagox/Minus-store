@@ -1,27 +1,19 @@
-<h1>Listing users</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Hashed password</th>
-    <th>Salt</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="catalog_site_title">Админы</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.hashed_password %></td>
-    <td><%= user.salt %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="users">
+    <p>Логин:<%= user.name %></p>
+    <p>Hashed password: <%= user.hashed_password %></p>
+    <p>Salt: <%= user.salt %></p>
+    <p class="catalog_actions">
+      <%= link_to 'Показать', user %>
+      <%= link_to 'Редактировать', edit_user_path(user) %>
+      <%= link_to 'Удалить', user, :confirm => 'Are you sure?', :method => :delete %>
+    </p>
+  </div>
 <% end %>
-</table>
-
 <br />
-
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Новый админ', new_user_path %>

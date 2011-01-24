@@ -368,4 +368,10 @@ main{
 .clear{
     clear:both;
 }
-
+.users{
+    background:#F0EEE0;   
+    margin-bottom:10px;
+    margin-top:10px;
+    padding:10px;
+    
+}
