@@ -1,7 +1,14 @@
 <h1 class="catalog_site_title"><%= @title %></h1>
+<p class="admin_name">Вы зашли под пользователем: <b><%= @user.name %></b></p>
 <% if notice%>
 <p id="notice">
   <%= notice %>
 </p>
 <% end %>
+<div>
+  <p><%= link_to 'Минуса', catalogs_url %></p>
+  <p><%= link_to 'Новости/Акции', posts_url %></p>
+  <p><%= link_to 'Ссылки', links_url %></p>
+  <p><%= link_to 'Пользователи', users_url %></p>
+</div>
 
