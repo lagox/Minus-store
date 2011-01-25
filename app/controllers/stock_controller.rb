@@ -1,5 +1,6 @@
 #encoding:utf-8
 class StockController < ApplicationController
+  skip_before_filter :authorize
   respond_to :html
   
   def index

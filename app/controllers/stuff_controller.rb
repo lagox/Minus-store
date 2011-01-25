@@ -1,5 +1,6 @@
 #encoding:utf-8
 class StuffController < ApplicationController
+  skip_before_filter :authorize
   
   def index
     begin

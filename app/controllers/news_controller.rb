@@ -1,5 +1,7 @@
 #encoding:utf-8
 class NewsController < ApplicationController
+  skip_before_filter :authorize
+  
   def index
     begin
     @title = "Новости"

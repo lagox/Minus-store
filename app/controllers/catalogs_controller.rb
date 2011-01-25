@@ -1,5 +1,6 @@
-#encoding:UTF-8
+#encoding:utf-8
 class CatalogsController < ApplicationController
+  
   # GET /catalogs
   # GET /catalogs.xml
   def index
