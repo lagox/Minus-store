@@ -379,3 +379,26 @@ main{
 .admin_name{
     font-size:11px;
 }
+
+/*404*/
+.notfound{
+    text-align:center;
+    margin-top:250px;
+    font-size:40px;
+    color:#491701;
+    font-weight:bold;
+    font-family:Helvetica, Tahoma, sans-serif;
+}
+.notfound_text{
+    font-size:20px;
+    text-align:center;
+    font-family:Helvetica, Tahoma, sans-serif;
+    margin-top:20px;
+}
+.notfound_text a{
+    color:#491701;
+}
+.notfound_text a:hover{
+    color:#CD460E;
+}
+

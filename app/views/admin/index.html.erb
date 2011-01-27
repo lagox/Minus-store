@@ -1,5 +1,7 @@
 <h1 class="catalog_site_title"><%= @title %></h1>
-<p class="admin_name">Вы зашли под пользователем: <b><%= @user.name %></b></p>
+<p class="admin_name">
+  Вы зашли под пользователем: <b><%= @user.name %></b>
+</p>
 <% if notice%>
 <p id="notice">
   <%= notice %>
@@ -11,4 +13,6 @@
   <p><%= link_to 'Ссылки', links_url %></p>
   <p><%= link_to 'Пользователи', users_url %></p>
 </div>
-
+<p>
+  <%= button_to 'Выйти из системы', logout_url, :confirm => "Вы уверены?" , :method => :delete %>
+</p>
