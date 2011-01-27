@@ -228,13 +228,7 @@ main{
      text-align:center;
      margin-top:10px;
 }
-#footer .copy{
-     font-size:11px;
-     font-family:Tahoma,Helvetica,sans-serif;
-     font-weight:bold;
-     padding-top:40px;
-     color:#491701;
-}
+
 #error_explanation{
     color:red;
 }
@@ -401,4 +395,20 @@ main{
 .notfound_text a:hover{
     color:#CD460E;
 }
-
+.soc_net{
+    text-align:right;
+    margin-right:105px;
+    margin-top:10px;
+}
+.soc_net a{
+    margin-left:10px;
+}
+.copy{
+    text-align:right;
+    color:#491701;
+    font-family:Tahoma, Helvetica, sans-serif;
+    font-size:11px;
+    margin-right:90px;
+    padding-top:20px;
+    font-weight:bold;
+}
