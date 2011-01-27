@@ -30,7 +30,7 @@
                 <% end %>                
               </ul>
             </div>
-          </div>  
+          </div>
           <div class="side_block">
             <h2 class="side_title">
               Как связаться с нами
@@ -42,5 +42,18 @@
               Тел.: +7(777)3894484
               </p>
             </div>
-          </div>  
+          </div>
+          <% unless @user.nil? %>
+            <div class="side_block">
+              <h2 class="side_title">
+                Админка
+              </h2>
+              <div class="side_cont">
+                Ваш логин: <%= @user.name %><br />
+                <%= link_to 'Админка', admin_url%><br />
+                <%= link_to 'Новый минус', new_catalog_path %><br />
+                <%= link_to 'Новая запись', new_post_path %>
+              </div>
+            </div>
+          <% end %>
         </div>
