@@ -1,6 +1,6 @@
 #encoding:UTF-8
 class PagesController < ApplicationController
-  skip_before_filter :authorize
+
   respond_to :html
   
   def index

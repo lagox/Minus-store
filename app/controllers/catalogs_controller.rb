@@ -1,5 +1,6 @@
 #encoding:utf-8
 class CatalogsController < ApplicationController
+  before_filter :authorize
   
   # GET /catalogs
   # GET /catalogs.xml

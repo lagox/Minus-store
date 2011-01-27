@@ -1,5 +1,6 @@
 #encoding:utf-8
 class PostsController < ApplicationController
+  before_filter :authorize
   
   respond_to :html
   

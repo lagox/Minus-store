@@ -1,6 +1,6 @@
 #encoding:UTF-8
 class StoreController < ApplicationController
-  skip_before_filter :authorize
+
   def index
     begin
     @catalogs = Catalog.paginate :page => params[:page]
@@ -12,12 +12,18 @@ class StoreController < ApplicationController
   end
   
   def show
-    @catalog = Catalog.find(params[:id])
-    @title = @catalog.title
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @catalog }
+    begin
+      @catalog = Catalog.find(params[:id])
+      @title = @catalog.title
+      respond_to do |format|
+        format.html
+        format.xml { render :xml => @catalog }
+      end
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = "Такой записи не существует"
+      redirect_to stocks_path
     end
+    
   end
   
   def pay

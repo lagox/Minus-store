@@ -1,5 +1,6 @@
 #encoding:utf-8
 class LinksController < ApplicationController
+  before_filter :authorize
   # GET /links
   # GET /links.xml
   def index

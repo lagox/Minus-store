@@ -1,7 +1,7 @@
 #encoding:utf-8
 class ApplicationController < ActionController::Base
-  before_filter :authorize
   before_filter :user_name
+
   protect_from_forgery
   
   
@@ -21,4 +21,5 @@ class ApplicationController < ActionController::Base
         redirect_to login_url, :notice => "Войдите в систему"
       end
     end
+    
 end
