@@ -10,6 +10,9 @@
     <div class="content">
       <%= raw(@new.body) %>
     </div>
+    <div class="date_add">
+      Дата публикации: <%= @new.created_at.strftime("%d.%m.%Y") %>
+    </div>
   </div>
   <div class="newcatalogbutton">
   <%= button_to "Назад", news_path, :method => :get %>

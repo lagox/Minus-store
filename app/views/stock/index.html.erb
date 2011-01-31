@@ -12,6 +12,9 @@
     <div class="content">
       <%= raw(stock.body) %>
     </div>
+    <div class="date_add">
+      Дата публикации: <%= stock.created_at.strftime("%d.%m.%Y") %>
+    </div>    
   </div>
 <% end %>
 <div class="willpaginate">

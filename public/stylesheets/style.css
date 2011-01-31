@@ -412,3 +412,10 @@ main{
     padding-top:20px;
     font-weight:bold;
 }
+.date_add{
+    background-color:#F0EEE0;
+    color:#6B6B6B;
+    padding:5px;
+    font-size:11px;
+    margin-top:5px;
+}
