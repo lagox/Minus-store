@@ -15,11 +15,11 @@ module ApplicationHelper
   end
   
   def new_minus
-    @lastminus = Catalog.last(5)
+    @lastminus = Catalog.first(5)
   end
   
   def sold_minus
-    @soldminus = Catalog.where(:sold => true).last(5)
+    @soldminus = Catalog.where(:sold => true).first(5)
   end
   
 end

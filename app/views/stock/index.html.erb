@@ -4,6 +4,11 @@
   <%= notice %>
 </p>
 <% end %>
+<% if empty_stock %>
+<p id="notice">
+  <%= empty_stock %>
+</p>
+<% end %>
 <% @stocks.each do |stock| %>
   <div class="post_one">
     <div class="title">

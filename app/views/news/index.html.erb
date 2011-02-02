@@ -4,6 +4,11 @@
   <%= notice %>
 </p>
 <% end %>
+<% if empty_news %>
+<p id="notice">
+<%= empty_news %>
+</p>
+<% end %>
 <% @news.each do |new| %>
   <div class="post_one">
     <div class="title">
