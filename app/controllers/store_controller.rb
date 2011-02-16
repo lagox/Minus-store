@@ -26,15 +26,6 @@ class StoreController < ApplicationController
     
   end
   
-  def pay
-    begin
-    @catalog = Catalog.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:notice] = "Выберите минус"
-      redirect_to store_path
-    end
-  end
-  
   def create
     if params[:name].nil?
       flash[:notice] = "Доступ запрещен"

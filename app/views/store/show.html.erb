@@ -3,7 +3,6 @@
   <%= notice %>
 </p>
 <% end %>
-<%= form_tag(pay_path,:method => "post") do %>
   <div style="margin:0;padding:0;display:inline">
     <input name="id" type="hidden" value="<%= @catalog.id %>" />
   </div> 
@@ -17,11 +16,7 @@
     </p>
     <div class="catalog_actions">
       <p>
-        <%= button_to "Купить" %>
-      </p>
-      <p>
-        <%= button_to 'Вернуться в каталог', store_path %>
+        <%= button_to 'Вернуться в каталог', store_path, :method => :get %>
       </p>
     </div>
   </div>
-<% end %>

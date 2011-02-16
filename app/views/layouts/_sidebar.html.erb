@@ -9,7 +9,7 @@
                   <li>Нету свежих минусов :)</li>
                 <% else %>
                   <% new_minus.each do |minus| %>
-                    <li><%= link_to minus.title, "store/#{minus.id}" %></li>
+                    <li><%= link_to minus.title, "/store/#{minus.id}" %></li>
                   <% end %>
                 <% end %>              
               </ul>
@@ -25,7 +25,7 @@
                   <li>Пока никто не купил:)</li>
                 <% else %>
                   <% sold_minus.each do |minus| %>
-                    <li><%= link_to minus.title, "store/#{minus.id}" %></li>
+                    <li><%= link_to minus.title, "/store/#{minus.id}" %></li>
                   <% end %>
                 <% end %>                
               </ul>
