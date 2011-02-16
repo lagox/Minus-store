@@ -20,11 +20,15 @@
     <%= f.file_field :minus %>
   </div>
   <div class="field">
+    <%= f.label "Архив" %><br />
+    <%= f.file_field :archive %>
+  </div>  
+  <div class="field">
     <%= f.label :length, 'Длительность' %><br />
     <%= f.text_field :length %>
   </div>
   <div class="field">
-    <%= f.label :price, 'Цена' %><br />
+    <%= f.label :price, 'Цена(рублей)' %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
