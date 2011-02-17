@@ -1,49 +1,41 @@
-# _your_login_ - Поменять на ваш логин в панели управления
-# _your_project_ - Поменять на имя вашего проекта
-# _your_server_ - Поменять на имя вашего сервера (Указано на вкладке "FTP и SSH" вашей панели управления)
-# set :repository - Установить расположение вашего репозитория
-# У вас должна быть настроена авторизация ssh по сертификатам
+require 'rubygems'
+require 'bundler/capistrano'
 
-set :application, "theminus"
-set :repository,  "git@github.com:lagox/Minus-store.git"
+set :application, 'theminus'
 
-dpath = "/home/hosting_your_login/projects/theminus"
+role :web, 'lithium.locum.ru'
+role :app, 'lithium.locum.ru'
 
-set :user, "hosting_your_login"
+set :user, 'hosting_lagox'
 set :use_sudo, false
-set :deploy_to, dpath
+set :rack_env, 'production'
+set :rake, '/var/lib/gems/1.8/bin/rake'
 
+set :deploy_to, "/home/hosting_lagox/projects/#{application}"
 set :scm, :git
+set :deploy_via, :remote_cache
+set :repository, 'git://github.com/lagox/Minus-store.git'
+set :git_enable_submodules, 1
+set :branch, 'master'
 
-role :web, "lithium.locum.ru"                          # Your HTTP server, Apache/etc
-role :app, "lithium.locum.ru"                          # This may be the same as your `Web` server
-role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations will run
+set :bundle_cmd, '/var/lib/gems/1.8/bin/bundle'
+set :bundle_gemfile, 'Gemfile'
+set :bundle_dir, fetch(:shared_path) + '/bundle'
+set :bundle_flags, '--deployment --quiet'
+set :bundle_without, [ :development, :test ]
 
-after "deploy:update_code", :copy_database_config
+set :unicorn_rails, "#{bundle_cmd} exec unicorn_rails"
+set :unicorn_conf, "/etc/unicorn/#{application}.lagox.rb"
+set :unicorn_pid, "/var/run/unicorn/#{application}.lagox.pid"
 
-task :copy_database_config, roles => :app do
-  db_config = "#{shared_path}/database.yml"
-  run "cp #{db_config} #{release_path}/config/database.yml"
-end
-
-set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
-set :unicorn_conf, "/etc/unicorn/theminus.lagox.rb"
-set :unicorn_pid, "/var/run/unicorn/theminus.lagox.pid"
-
-# - for unicorn - #
 namespace :deploy do
-  desc "Start application"
-  task :start, :roles => :app do
-    run "#{unicorn_rails} -Dc #{unicorn_conf}"
+  task :start do
+    run "cd #{current_path} && #{unicorn_rails} -Dc #{unicorn_conf} -E #{rack_env}"
   end
-
-  desc "Stop application"
-  task :stop, :roles => :app do
+  task :stop do
     run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
   end
-
-  desc "Restart Application"
-  task :restart, :roles => :app do
-    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_rails} -Dc #{unicorn_conf}"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && [ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_rails} -Dc #{unicorn_conf} -E #{rack_env}"
   end
 end
