@@ -1,7 +1,10 @@
 Minus::Application.routes.draw do
-  get "payment/index"
 
   get "admin" => 'admin#index'
+  
+  #payment
+  get "payment" => "payment#index"
+  get "payerror" => "payment#error"
 
   controller :sessions do
     get 'login' => :new
