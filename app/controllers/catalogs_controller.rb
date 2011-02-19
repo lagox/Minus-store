@@ -47,13 +47,12 @@ class CatalogsController < ApplicationController
 
     respond_to do |format|
       if @catalog.save
-        archive = File.open("#{@catalog.archive.path}")
-        new_name = rand(1000*1000).to_i.abs.to_s + ".zip"
-        splits_file = File.split(archive)
-        File.rename("#{splits_file[0]}/#{splits_file[1]}", "#{splits_file[0]}/#{new_name}")
-        @catalog.update_attribute("archive_file_name", new_name)
-        
-        format.html { redirect_to(@catalog, :notice => 'Catalog was successfully created.') }
+        #archive = File.open("#{@catalog.archive.path}")
+        #new_name = rand(1000*1000).to_i.abs.to_s + ".zip"
+        #splits_file = File.split(archive)
+        #File.rename("#{splits_file[0]}/#{splits_file[1]}", "#{splits_file[0]}/#{new_name}")
+        #@catalog.update_attribute("archive_file_name", new_name)
+        format.html { redirect_to(@catalog, :notice => 'Минус загружен') }
         format.xml  { render :xml => @catalog, :status => :created, :location => @catalog }
       else
         format.html { render :action => "new" }
@@ -69,7 +68,7 @@ class CatalogsController < ApplicationController
 
     respond_to do |format|
       if @catalog.update_attributes(params[:catalog])
-        format.html { redirect_to(@catalog, :notice => 'Catalog was successfully updated.') }
+        format.html { redirect_to(@catalog, :notice => 'Минус обновлен.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

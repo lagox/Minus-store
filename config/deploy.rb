@@ -10,6 +10,7 @@ set :repository,  "git://github.com/lagox/Minus-store.git"
 dpath = "/home/hosting_lagox/projects/theminus"
 
 set :user, "hosting_lagox"
+set :rack_env, 'production'
 set :use_sudo, false
 set :deploy_to, dpath
 
