@@ -2,5 +2,4 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-public/minus/*
-public/archives/*
+public/system/*

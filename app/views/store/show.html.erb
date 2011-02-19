@@ -12,7 +12,7 @@
     <div class="catalog_price">Цена: <%= @catalog.price %> руб.</div>
     <div class="catalog_sold">Продано: <%= @catalog.sold ? "Да" : "Нет"  %></div>
     <p>
-  <object id="audioplayer478" type="application/x-shockwave-flash" data="<%= root_url %>uppod.swf" width="300" height="35"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="<%= root_url %>uppod.swf" /><param name="flashvars" value="comment=nn&amp;st=<%= root_url %>styles/audio66-298.txt&amp;file=<%= root_url + @catalog.minus.url %>" /></object>
+  <object id="audioplayer478" type="application/x-shockwave-flash" data="<%= root_url %>uppod.swf" width="300" height="35"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="<%= root_url %>uppod.swf" /><param name="flashvars" value="comment=nn&amp;st=<%= root_url %>styles/audio66-298.txt&amp;file=<%= root_url + 'system/' + @catalog.minus.url %>" /></object>
     </p>
     <div class="catalog_actions">
       <p>
