@@ -5,7 +5,8 @@
   </p>
 <% end %>
 <% @catalogs.each do |catalog| %>
-  <%= form_tag(pay_path,:method => "post") do %>
+<form name="payment" action="https://interkassa.com/lib/payment.php" method="post" 
+enctype="application/x-www-form-urlencoded" accept-charset="cp1251">
   <div style="margin:0;padding:0;display:inline">
     <input name="id" type="hidden" value="<%= catalog.id %>" />
   </div> 
@@ -18,10 +19,19 @@
   <object id="audioplayer478" type="application/x-shockwave-flash" data="<%= root_url %>uppod.swf" width="300" height="35"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="<%= root_url %>uppod.swf" /><param name="flashvars" value="comment=nn&amp;st=<%= root_url %>styles/audio66-298.txt&amp;file=<%= root_url + 'system/' + catalog.minus.url %>" /></object>
     </p>
     <div class="catalog_actions">
-      <%= button_to "Купить" %>
+      <input type="hidden" name="ik_shop_id" value="907B905C-97B6-8A01-CF2C-92BB503D722B">
+      <input type="hidden" name="ik_payment_amount" value="<%= catalog.price %>">
+      <input type="hidden" name="ik_payment_id" value="<%= catalog.id %>">
+      <input type="hidden" name="ik_payment_desc" value="<%= catalog.title %>">
+      <input type="hidden" name="ik_paysystem_alias" value="">
+      <input type="hidden" name="ik_success_url" value="http://theminus.ru/payment">
+      <input type="hidden" name="ik_success_method" value="POST">
+      <input type="hidden" name="ik_fail_url" value=" http://theminus.ru/payerror">
+      <input type="hidden" name="ik_fail_method" value="POST">
+      <input type="submit" <% if catalog.sold? %>disabled<%end%> name="process" value="Купить">
     </div>
   </div>
-  <% end %>
+</form> 
 <% end %>
 
 <br />
