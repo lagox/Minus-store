@@ -2,7 +2,6 @@
 class PaymentController < ApplicationController
 
   def index
-
     if params[:ik_payment_id]
       @title = "Спасибо за покупку!"
       flash[:notice] = "Поздравляем с покупкой!"

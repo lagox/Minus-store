@@ -27,6 +27,12 @@ task :copy_database_config, roles => :app do
   run "cp #{db_config} #{release_path}/config/database.yml"
 end
 
+task :symlink_shared, roles => :app do
+  run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+end 
+
+after "deploy:update_code", :symlink_shared
+
 set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"
 set :unicorn_conf, "/etc/unicorn/theminus.lagox.rb"
 set :unicorn_pid, "/var/run/unicorn/theminus.lagox.pid"
