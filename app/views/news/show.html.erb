@@ -13,12 +13,12 @@
     <div class="date_add">
       Дата публикации: <%= @new.created_at.strftime("%d.%m.%Y") %>
     </div>
+<script type="text/javascript">
+  VK.init({apiId: 2177636, onlyWidgets: true});
+</script>
 <div id="vk_comments"></div>
 <script type="text/javascript">
-window.onload = function () {
- VK.init({apiId: 2177636, onlyWidgets: true});
- VK.Widgets.Comments('vk_comments', {width: 600, limit: 15}, 321);
-}
+VK.Widgets.Comments("vk_comments", {limit: 10, width: "600", attach: "*"});
 </script>
   </div>
   <div class="newcatalogbutton">
