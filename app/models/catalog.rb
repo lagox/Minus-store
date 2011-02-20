@@ -13,7 +13,7 @@ class Catalog < ActiveRecord::Base
                     :url => ":attachment/:id/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:basename.:extension"
   validates_attachment_presence :archive
-  validates_attachment_content_type :archive, :content_type => ['application/zip','application/x-rar-compressed']
+  validates_attachment_content_type :archive, :content_type => ['application/zip','application/octet-stream','application/x-rar-compressed']
   
   #sort
   default_scope order("id DESC")
