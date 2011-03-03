@@ -1,6 +1,8 @@
 #encoding:utf-8
 class PaymentController < ApplicationController
 
+  skip_before_filter :verify_authenticity_token
+
   def index
     if params[:ik_payment_id]
       @title = "Спасибо за покупку!"
