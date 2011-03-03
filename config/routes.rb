@@ -3,8 +3,8 @@ Minus::Application.routes.draw do
   get "admin" => 'admin#index'
   
   #payment
-  get "payment" => "payment#index"
-  get "payerror" => "payment#error"
+  match "payment" => "payment#index"
+  match "payerror" => "payment#error"
 
   controller :sessions do
     get 'login' => :new
@@ -96,5 +96,5 @@ Minus::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   
   #404
-  match '*a' => 'errors#routing'
+  #match '*a' => 'errors#routing'
 end
