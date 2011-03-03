@@ -14,6 +14,7 @@ enctype="application/x-www-form-urlencoded" accept-charset="cp1251">
   <object id="audioplayer478" type="application/x-shockwave-flash" data="<%= root_url %>uppod.swf" width="300" height="35"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="<%= root_url %>uppod.swf" /><param name="flashvars" value="comment=nn&amp;st=<%= root_url %>styles/audio66-298.txt&amp;file=<%= root_url + 'system/' + @catalog.minus.url %>" /></object>
     </p>
     <div class="catalog_actions">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="hidden" name="ik_shop_id" value="907B905C-97B6-8A01-CF2C-92BB503D722B">
       <input type="hidden" name="ik_payment_amount" value="<%= @catalog.price %>">
       <input type="hidden" name="ik_payment_id" value="<%= @catalog.id %>">
