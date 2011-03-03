@@ -96,5 +96,5 @@ Minus::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   
   #404
-  #match '*a' => 'errors#routing'
+  match '*a' => 'errors#routing'
 end
