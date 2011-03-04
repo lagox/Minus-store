@@ -217,7 +217,7 @@ main{
     height:96px;
     background:url("/images/how_contact_back.gif");
     background-repeat:no-repeat;
-    padding-top:20px;
+    padding-top:30px;
     padding-left:18px;
 }
 #footer{
@@ -402,6 +402,7 @@ main{
 }
 .soc_net a{
     margin-left:10px;
+    text-decoration:none;
 }
 .copy{
     text-align:right;
