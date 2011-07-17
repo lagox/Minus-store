@@ -12,7 +12,7 @@ development:
   database: minus_development
   pool: 5
   username: root
-  password:
+  password: '3192332124'
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
